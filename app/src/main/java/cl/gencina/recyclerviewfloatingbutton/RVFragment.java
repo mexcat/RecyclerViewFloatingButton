@@ -18,7 +18,6 @@ public class RVFragment extends Fragment {
     FragmentRVBinding binding;
     List<String> data = new ArrayList<String>();
     RvAdapter infoAdapter = new RvAdapter();
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -71,8 +70,7 @@ public class RVFragment extends Fragment {
 
     public void addData(){
         data.add("Data "+ String.valueOf(data.size()));
-        this.infoAdapter.setInfo(data);
-        this.infoAdapter.notifyDataSetChanged();
+        this.infoAdapter.notifyItemInserted(data.size());
     }
 
 }
